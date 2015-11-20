@@ -81,5 +81,28 @@ describe( 'create apply', function tests() {
 
 	});
 
+	it( 'returned function should throw if not supplied an array', function test() {
+		var isEvenArray = create( isEven );
+
+		var values = [
+			'5',
+			5,
+			NaN,
+			true,
+			null,
+			undefined,
+			new Int32Array(),
+			{},
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				isEvenArray( value );
+			};
+		}
+	});
 
 });

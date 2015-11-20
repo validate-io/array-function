@@ -36,7 +36,7 @@
     "url": "https://github.com/validate-io/array-function/issues"
   },
   "dependencies": {
-    "validate.io-array-like": "^1.0.1",
+    "validate.io-array": "^1.0.6",
     "validate.io-function": "^1.0.2"
   },
   "devDependencies": {
