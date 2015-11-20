@@ -8,7 +8,7 @@ Validate Array Function
 ## Installation
 
 ``` bash
-$ npm install validate-array-function
+$ npm install validate.io-array-function
 ```
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
@@ -17,7 +17,7 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var validate = require( 'validate-array-function' );
+var validate = require( 'validate.io-array-function' );
 ```
 
 <a name="validate"></a>
@@ -166,8 +166,8 @@ $ make view-cov
 Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/validate-array-function.svg
-[npm-url]: https://npmjs.org/package/validate-array-function
+[npm-image]: http://img.shields.io/npm/v/validate.io-array-function.svg
+[npm-url]: https://npmjs.org/package/validate.io-array-function
 
 [travis-image]: http://img.shields.io/travis/validate-io/array-function/master.svg
 [travis-url]: https://travis-ci.org/validate-io/array-function
