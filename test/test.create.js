@@ -81,7 +81,7 @@ describe( 'create apply', function tests() {
 
 	});
 
-	it( 'returned function should throw if not supplied an array', function test() {
+	it( 'returned function should yield false if not supplied an array', function test() {
 		var isEvenArray = create( isEven );
 
 		var values = [
@@ -91,17 +91,12 @@ describe( 'create apply', function tests() {
 			true,
 			null,
 			undefined,
-			new Int32Array(),
+			new Int32Array([2,4,6]),
 			{},
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( TypeError );
-		}
-		function badValue( value ) {
-			return function() {
-				isEvenArray( value );
-			};
+			assert.strictEqual( isEvenArray( values[ i ] ), false )
 		}
 	});
 

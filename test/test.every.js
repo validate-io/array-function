@@ -46,11 +46,8 @@ describe( 'every', function tests() {
 	});
 
 
-	it( 'should throw an error if not provided an input array', function test() {
-		expect( foo ).to.throw( Error );
-		function foo() {
-			every( noop );
-		}
+	it( 'should return false if not provided an input array', function test() {
+		assert.strictEqual( every( noop ), false );
 	});
 
 	it( 'should validate elements of an array', function test() {
