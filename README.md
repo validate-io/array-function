@@ -68,7 +68,7 @@ function isOdd( val ) {
 ===
 ### Raw
 
-A lower-level API are provided which forgo some of the guarantees of the above APIs, such as input argument validation. While use of the above APIs is encouraged in REPL environments, use of the lower-level interfaces may be warranted when arguments are of a known type or when performance is paramount.
+A lower-level API is provided which forgoes some of the guarantees of the above APIs, such as input argument validation. While use of the above APIs is encouraged in REPL environments, use of the lower-level interface may be warranted when arguments are of a known type or when performance is paramount.
 
 #### validate.raw( fcn, arr )
 
