@@ -21,9 +21,11 @@ var validate = require( 'validate.io-array-function' );
 ```
 
 <a name="validate"></a>
-#### validate( fcn, arr )
+#### validate( fcn, value )
 
-Tests a `function` for each [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) element. The function returns `true` if all elements pass the test and `false` otherwise.
+Validates if a `value` is an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`. For an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+
+__Note__: the method will return `false` for an empty `array`.
 
 ``` javascript
 var arr1 = [ 1, 3, 5, 7 ],
@@ -48,7 +50,7 @@ To facilitate using [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaS
 
 #### validate.create( fcn )
 
-Creates a validator `function` which tests a `function` for each [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) element.
+Creates a validator `function` which validates whether a `value` is an  [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`.
 
 ``` javascript
 var isOddArray = validate.create( isOdd ),
@@ -70,9 +72,9 @@ function isOdd( val ) {
 
 A lower-level API is provided which forgoes some of the guarantees of the above APIs, such as input argument validation. While use of the above APIs is encouraged in REPL environments, use of the lower-level interface may be warranted when arguments are of a known type or when performance is paramount.
 
-#### validate.raw( fcn, arr )
+#### validate.raw( fcn, value )
 
-Tests a `function` on each [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) element. The function returns `true` if all elements pass the test and `false` otherwise.
+Validates if a `value` is an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`. For an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
 var arr = [ 1, 1, 1, 1, 1 ]

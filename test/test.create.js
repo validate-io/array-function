@@ -81,6 +81,16 @@ describe( 'create apply', function tests() {
 
 	});
 
+	it( 'returned function should yield false if provided an empty array', function test() {
+		var validate,
+			actual;
+
+		validate = create( isEven );
+		actual = validate( [] );
+		assert.strictEqual( actual, false );
+
+	});
+
 	it( 'returned function should yield false if not supplied an array', function test() {
 		var isEvenArray = create( isEven );
 
@@ -96,7 +106,7 @@ describe( 'create apply', function tests() {
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			assert.strictEqual( isEvenArray( values[ i ] ), false )
+			assert.strictEqual( isEvenArray( values[ i ] ), false );
 		}
 	});
 
