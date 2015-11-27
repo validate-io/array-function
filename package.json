@@ -1,7 +1,7 @@
 {
   "name": "validate.io-array-function",
   "version": "0.0.0",
-  "description": "Validates if a value is an array for which all elements pass the test implemented by the provided function.",
+  "description": "Validates if every element of an array passes a test condition.",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
