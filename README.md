@@ -1,4 +1,4 @@
-Validate Array Function
+Array Function
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -23,14 +23,14 @@ var validate = require( 'validate.io-array-function' );
 <a name="validate"></a>
 #### validate( fcn, value )
 
-Validates if a `value` is an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+Validates if every element of an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) passes a test condition. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test. It returns `false` otherwise.
 
 ``` javascript
 var arr1 = [ 1, 3, 5, 7 ],
 	arr2 = [ 3, 5, 'c' ];
 
-function isOdd( val ) {
-	return val % 2 === 1;
+function isOdd( x ) {
+	return ( typeof x === 'number' && x % 2 === 1 );
 }
 
 var out = validate( isOdd, arr1 );
@@ -41,8 +41,6 @@ var out = validate( isOdd, arr2 );
 
 ```
 
-__Note__: the method will return `false` for an empty `array`.
-
 ===
 ### Create
 
@@ -50,21 +48,21 @@ To facilitate using [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaS
 
 #### validate.create( fcn )
 
-Creates a validation `function` which validates whether a `value` is an  [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`.
+Creates a validation `function` which validates whether every element of an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) passes a test condition.
 
 ``` javascript
-function isOdd( val ) {
-	return val % 2 === 1;
+function isOdd( x ) {
+	return ( typeof x === 'number' && x % 2 === 1 );
 }
 
 var isOddArray = validate.create( isOdd ),
 	out;
 
 out = isOddArray( [1,3,5] );
-// returns true;
+// returns true
 
 out = isOddArray( [2,3,4] );
-// returns false;
+// returns false
 ```
 
 ===
@@ -80,15 +78,17 @@ Validates if a `value` is an [`array`](https://developer.mozilla.org/en-US/docs/
 var arr = [ 1, 1, 1, 1, 1 ]
 
 var out = validate.raw( isOdd, arr );
-// returns true;
+// returns true
 
 function isOdd( val ) {
-	return val % 2 === 1;
+	return ( typeof x === 'number' && val % 2 === 1 );
 }
 ```
 
 ## Notes
 
+* 	A provided test function should accept a single argument: an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) element. If the [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) element satisfies a test condition, the function should return `true`; otherwise, the function should return `false`.
+*	The validation functions will return `false` for an empty [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 *	The `.create()` method uses dynamic code evaluation. Beware when using it in the browser as it may violate your [content security policy](https://developer.mozilla.org/en-US/docs/Web/Security/CSP) (CSP).
 
 
@@ -112,7 +112,7 @@ for ( i = 0; i < arr2.length; i++ ) {
 }
 
 function isEven( x ) {
-	return x % 2 === 0;
+	return ( typeof x === 'number' && val % 2 === 0 );
 }
 
 out = validateArray( isEven, arr1 );

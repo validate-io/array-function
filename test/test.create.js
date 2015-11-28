@@ -78,20 +78,18 @@ describe( 'create apply', function tests() {
 
 		assert.strictEqual( actual, out );
 		assert.strictEqual( out, false );
-
 	});
 
-	it( 'returned function should yield false if provided an empty array', function test() {
+	it( 'should return a function which returns false if provided an empty array', function test() {
 		var validate,
 			actual;
 
 		validate = create( isEven );
 		actual = validate( [] );
 		assert.strictEqual( actual, false );
-
 	});
 
-	it( 'returned function should yield false if not supplied an array', function test() {
+	it( 'should return a function which returns false if not supplied an array', function test() {
 		var isEvenArray = create( isEven );
 
 		var values = [

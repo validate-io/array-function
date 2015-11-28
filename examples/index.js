@@ -17,7 +17,7 @@ for ( i = 0; i < arr2.length; i++ ) {
 }
 
 function isEven( x ) {
-	return x % 2 === 0;
+	return ( typeof x === 'number' && x % 2 === 0 );
 }
 
 out = validateArray( isEven, arr1 );
