@@ -72,7 +72,7 @@ A lower-level API is provided which forgoes some of the guarantees of the above 
 
 #### validate.raw( fcn, value )
 
-Validates if a `value` is an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for which all elements pass the test given by the supplied `function`. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test and `false` otherwise.
+Validates if every element of an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) passes a test condition. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
 var arr = [ 1, 1, 1, 1, 1 ]
