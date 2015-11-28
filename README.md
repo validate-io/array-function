@@ -23,7 +23,7 @@ var validate = require( 'validate.io-array-function' );
 <a name="validate"></a>
 #### validate( fcn, value )
 
-Validates if every element of an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) passes a test condition. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test. It returns `false` otherwise.
+Validates if every element of an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) passes a test condition. Given an input [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), the function returns `true` if all elements pass the test and `false` otherwise.
 
 ``` javascript
 var arr1 = [ 1, 3, 5, 7 ],
